@@ -1,0 +1,15 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      cd Docker && docker build \
+      -t gcr.io/$PROJECT_ID/github.com/zookeeper00/gen_ai_docker:$COMMIT_SHA \
+      -f Dockerfile \
+      .
+images:
+- 'gcr.io/$PROJECT_ID/github.com/zookeeper00/gen_ai_docker:$COMMIT_SHA'
+
+logsBucket: gs://cloubuild-logs
+
