@@ -34,7 +34,4 @@ images:
 
 logsBucket: gs://cloubuild-logs
 
-options:
-  # Configure logging to use Cloud Logging only
-  logging: CLOUD_LOGGING_ONLY
 
